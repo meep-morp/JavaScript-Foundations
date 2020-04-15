@@ -126,24 +126,24 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 
 const variableInterestRate = (p, i, n) => {
 
-    i = i - 0.02;
-        
     let pr = n * 12;
+    i -= .02;
 
-    for (let z = 0; z <= 10; z++){
-        i = i + 0.005;
+    for (let z = 0; z < 10; z++){
         let ir = i / 12;
         
         const numer = ir * (Math.pow(1 + ir, pr));
         const denom = Math.pow(ir + 1, pr) - 1;
         payment = p * (numer / denom);
 
-        console.log (name + ", with an interest rate of " + Math.round(i * 1000) / 1000 + ", your monthly rate is $" + Math.round(payment * 100) / 100);
+        console.log (name + ", with an interest rate of " + Number.parseFloat(i).toFixed(3) + ", your monthly rate is $" + Math.round(payment));
+        i = i + 0.005;
     }
 
+        return "done";
 }
 
-console.log(variableInterestRate(200000, 0.05, 30))
+console.log(variableInterestRate(200000, 0.04, 30));
 
 
 
