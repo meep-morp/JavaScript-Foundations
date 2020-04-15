@@ -124,33 +124,26 @@ For example, variableInterestRate(200000, 0.04, 30) should console.log:
 "{Name}, with an interest rate of 0.06, your monthly rate is $1199"
 */
 
-const variableInterestRate = (p, i, n, creditScore) => {
+const variableInterestRate = (p, i, n) => {
+
+    i = i - 0.02;
         
-    if (creditScore > 740){
-        i = i - 0.5;
-    
-    } else if (creditScore < 660){
-
-        i = i + 0.5;
-    
-    } else if(creditScore < 740 && creditScore > 660){
-        i = i;
-    };
-
-    for (let i = 0; i <= 10; i++){
-        let i =
-    }
-
     let pr = n * 12;
-    let ir = i / 12;
 
-    const numer = ir * (Math.pow(1 + ir, pr));
-    const denom = Math.pow(ir + 1, pr) - 1;
+    for (let z = 0; z <= 10; z++){
+        i = i + 0.005;
+        let ir = i / 12;
+        
+        const numer = ir * (Math.pow(1 + ir, pr));
+        const denom = Math.pow(ir + 1, pr) - 1;
+        payment = p * (numer / denom);
 
-    return p * (numer / denom);
+        console.log (name + ", with an interest rate of " + Math.round(i * 1000) / 1000 + ", your monthly rate is $" + Math.round(payment * 100) / 100);
     }
 
-console.log(variableInterestRate())
+}
+
+console.log(variableInterestRate(200000, 0.05, 30))
 
 
 
