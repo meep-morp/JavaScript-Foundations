@@ -159,5 +159,17 @@ console.log(variableInterestRate(200000, 0.04, 30));
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 
+const principalPrompt = prompt("What was your down payment?")
+const interestPrompt = prompt("What is your interest rate?");
+const yearsPrompt = prompt("How many years would you like your payment to be?");
+
+const monthlyInterestRatePrompt = interestPrompt / 12;
+const periodsPrompt = yearsPrompt * 12;
+
+const numeratorPrompt = monthlyInterestRatePrompt * (Math.pow(1 + monthlyInterestRatePrompt, periodsPrompt));
+const denominatorPrompt = Math.pow(monthlyInterestRatePrompt + 1, periodsPrompt) - 1;
+const monthlyRatePrompt = principalPrompt * (numeratorPrompt / denominatorPrompt);
+
+alert("Your monthly payment is $" + Math.round(monthlyRatePrompt));
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
