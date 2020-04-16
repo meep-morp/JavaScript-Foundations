@@ -47,11 +47,11 @@ const monthlyRate = principal * (numerator / denominator);
 If your name is `Oscar` mortgageCalculator() should return "Oscar, your monthly rate is 1073.64"
 */
 
-// const mortgageCalculator = () => {
-//     return name + ", your monthly rate is $" + monthlyRate + ".";
-// }
+const mortgageCalculator1 = () => {
+    return name + ", your monthly rate is $" + monthlyRate + ".";
+}
 
-// console.log (mortgageCalculator());
+console.log (mortgageCalculator1());
 
 
 
