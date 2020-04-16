@@ -152,24 +152,34 @@ console.log(variableInterestRate(200000, 0.04, 30));
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
 
 /*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
+const monthlyPaymentFull = (p, i, n, propertyTax, HOInsurance, HOAFees) => {
 
+let pr = n * 12;
+let ir = i / 12;
+
+const numer = ir * (Math.pow(1 + ir, pr));
+const denom = Math.pow(ir + 1, pr) - 1;
+
+return (numer / denom * p) + propertyTax + HOInsurance + HOAFees;
+}
+console.log(Math.round(monthlyPaymentFull(200000, 0.04, 30, 500, 500, 500)));
 
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
 
 
 /* 🏡 Explore using `window.prompt()` to allow a user to input parameters in the browser */
 
-const principalPrompt = prompt("What was your down payment?")
-const interestPrompt = prompt("What is your interest rate?");
-const yearsPrompt = prompt("How many years would you like your payment to be?");
+    const principalPrompt = prompt("What was your down payment?")
+    const interestPrompt = prompt("What is your interest rate?");
+    const yearsPrompt = prompt("How many years would you like your payment to be?");
 
-const monthlyInterestRatePrompt = interestPrompt / 12;
-const periodsPrompt = yearsPrompt * 12;
+    const monthlyInterestRatePrompt = interestPrompt / 12;
+    const periodsPrompt = yearsPrompt * 12;
 
-const numeratorPrompt = monthlyInterestRatePrompt * (Math.pow(1 + monthlyInterestRatePrompt, periodsPrompt));
-const denominatorPrompt = Math.pow(monthlyInterestRatePrompt + 1, periodsPrompt) - 1;
-const monthlyRatePrompt = principalPrompt * (numeratorPrompt / denominatorPrompt);
+    const numeratorPrompt = monthlyInterestRatePrompt * (Math.pow(1 + monthlyInterestRatePrompt, periodsPrompt));
+    const denominatorPrompt = Math.pow(monthlyInterestRatePrompt + 1, periodsPrompt) - 1;
+    const monthlyRatePrompt = principalPrompt * (numeratorPrompt / denominatorPrompt);
 
-alert("Your monthly payment is $" + Math.round(monthlyRatePrompt));
+    alert("Your monthly payment is $" + Math.round(monthlyRatePrompt));
 
 /* 🏡  Refactor your `variableInterestRate()` function to accept an array of interest rates (make sure to copy and paste as to not lose your work!) */
