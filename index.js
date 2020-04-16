@@ -152,17 +152,17 @@ console.log(variableInterestRate(200000, 0.04, 30));
 /* Attempt any of the stretch goals below once you have finished the work above. Remember as always, these may require additional research beyond what you learned today */
 
 /*  🏡 Add  `Property Tax`, `Homeowner's insurance` and `HOA fees` as parameters in your function to calculate total monthly spending on housing */
-const monthlyPaymentFull = (p, i, n, propertyTax, HOInsurance, HOAFees) => {
+    const monthlyPaymentFull = (p, i, n, propertyTax, HOInsurance, HOAFees) => {
 
-let pr = n * 12;
-let ir = i / 12;
+    let pr = n * 12;
+    let ir = i / 12;
 
-const numer = ir * (Math.pow(1 + ir, pr));
-const denom = Math.pow(ir + 1, pr) - 1;
+    const numer = ir * (Math.pow(1 + ir, pr));
+    const denom = Math.pow(ir + 1, pr) - 1;
 
-return (numer / denom * p) + propertyTax + HOInsurance + HOAFees;
-}
-console.log(Math.round(monthlyPaymentFull(200000, 0.04, 30, 500, 500, 500)));
+    return (numer / denom * p) + propertyTax + HOInsurance + HOAFees;
+    }
+    console.log(Math.round(monthlyPaymentFull(200000, 0.04, 30, 500, 500, 500)));
 
 /* 🏡 Build a calculator function that accepts `monthly payment` and `interest rate` and returns the maximum loan that a person could afford */
 
