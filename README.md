@@ -25,7 +25,7 @@ The formula for a monthly mortgage payment is as follows:
 
 Or, in plain text:
 ```
-M = P [ I ( 1 + I )^N ] / [ ( 1 + I )^N – 1 ]
+Mortgage = AmountBorrowed [ Interest ( 1 + Interest )^NumberOfPeriods ] / [ ( 1 + Interest )^NumberOfPeriods – 1 ]
 ```
 
 In order to find your monthly payment amount "M,” you need to plug in the following three numbers from your loan:
